@@ -20,6 +20,10 @@ jobs:
           arduino-cli core update-index
           arduino-cli core install esp32:esp32
 
+      - name: Install required libraries
+        run: |
+          arduino-cli lib install "Adafruit GFX Library"
+
       - name: Compile Sketch
         run: |
           arduino-cli compile --fqbn esp32:esp32:esp32 hinhdongesp32.ino
